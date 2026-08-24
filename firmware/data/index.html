@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#08060d" />
+  <title>DC Assistant · Echo Mind</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app" id="app">
+    <!-- Tela Home -->
+    <section class="screen home active" data-screen="home">
+      <header class="topbar">
+        <div class="micro-label"><span class="tiny-dot"></span>DC ASSISTANT</div>
+        <div class="tabs">
+          <button class="tab active" data-tab="Profile">Profile</button>
+          <button class="tab" data-tab="Analytics">Analytics</button>
+          <button class="tab" data-tab="Shop">Shop</button>
+        </div>
+      </header>
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">A new kind of presence</p>
+          <h1>Meet the <span>Echo Mind.</span></h1>
+          <p class="hero-description">Your thoughtful companion for ideas, focus and the small moments in between.</p>
+          <button class="primary-button" data-goto="chat">Get started →</button>
+        </div>
+        <div class="portrait-wrap">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="portrait">🧠</div>
+        </div>
+      </div>
+      <footer class="home-footer">
+        <span>Always here when you need it</span>
+        <div class="system-readout"><span id="fps">-- FPS</span><span id="cpu">--% CPU</span></div>
+      </footer>
+    </section>
+
+    <!-- Tela Chat -->
+    <section class="screen chat" data-screen="chat">
+      <header class="user-header">
+        <div class="user-profile"><div class="mini-avatar">👤</div><span>Mark Jonson!</span></div>
+        <button class="icon-button">🔔</button>
+      </header>
+      <div class="chat-actions">
+        <button class="feature-card" data-goto="voice"><span class="feature-icon">📄</span><span>Chat with<br />Echo Mind</span><span class="card-arrow">›</span></button>
+        <button class="feature-card" data-goto="voice"><span class="feature-icon">🎙️</span><span>Talk with<br />Echo Mind</span><span class="card-arrow">›</span></button>
+      </div>
+      <div class="section-heading"><span>Topics</span><button>View All</button></div>
+      <div class="topic-grid">
+        <button class="topic-item"><span class="topic-icon">📈</span><span>Finance</span></button>
+        <button class="topic-item"><span class="topic-icon">🛡️</span><span>Health</span></button>
+        <button class="topic-item"><span class="topic-icon">💻</span><span>Develop</span></button>
+        <button class="topic-item"><span class="topic-icon">📊</span><span>Business</span></button>
+      </div>
+    </section>
+
+    <!-- Tela Voice -->
+    <section class="screen voice" data-screen="voice">
+      <header class="voice-header">
+        <button class="round-button" data-goto="chat">←</button>
+        <span>Voice Assessment</span>
+        <button class="round-button">⋯</button>
+      </header>
+      <div class="voice-body">
+        <p class="voice-kicker" id="voice-kicker">Go ahead, I'm listening...</p>
+        <div class="wave-stage" id="wave-stage">
+          <div class="wave wave-a"></div><div class="wave wave-b"></div><div class="wave wave-c"></div>
+          <div class="wave-core">🌊</div>
+        </div>
+        <p class="voice-description">Fluid organic shapes dance across the canvas,<br />conveying a sense of harmony in this <em>abstract design.</em></p>
+      </div>
+      <div class="voice-controls">
+        <button class="round-button">✏️</button>
+        <button class="mic-button" id="mic-btn" aria-label="Start listening">🎤</button>
+        <button class="round-button">🔖</button>
+      </div>
+    </section>
+
+    <!-- Tela Apps -->
+    <section class="screen apps" data-screen="apps">
+      <header class="apps-header">
+        <div><p class="eyebrow">Your workspace</p><h2>Apps</h2></div>
+        <div class="header-actions"><button class="round-button">🔍</button><button class="round-button">⚙️</button></div>
+      </header>
+      <div class="app-grid">
+        <button class="app-item"><span class="app-icon" style="--app-color:#65d391">🎧</span><span>Spotify</span></button>
+        <button class="app-item"><span class="app-icon" style="--app-color:#77a7ff">📅</span><span>Agenda</span></button>
+        <button class="app-item"><span class="app-icon" style="--app-color:#ffcc67">📁</span><span>Gestor</span></button>
+        <button class="app-item"><span class="app-icon" style="--app-color:#ff8b9e">✉️</span><span>E-mail</span></button>
+        <button class="app-item"><span class="app-icon" style="--app-color:#f6b7ff">📝</span><span>Notas</span></button>
+        <button class="app-item"><span class="app-icon" style="--app-color:#76d8ef">🌤️</span><span>Clima</span></button>
+        <button class="app-item"><span class="app-icon" style="--app-color:#70dbb1">📊</span><span>Relatórios</span></button>
+        <button class="app-item"><span class="app-icon" style="--app-color:#d3c7e7">⚙️</span><span>Config.</span></button>
+      </div>
+      <div class="status-card" id="status-card">
+        <h3>Status do dispositivo</h3>
+        <dl>
+          <div><dt>Wi-Fi</dt><dd id="st-wifi">—</dd></div>
+          <div><dt>IP</dt><dd id="st-ip">—</dd></div>
+          <div><dt>Bateria</dt><dd id="st-bat">—</dd></div>
+          <div><dt>MicroSD</dt><dd id="st-sd">—</dd></div>
+          <div><dt>Uptime</dt><dd id="st-uptime">—</dd></div>
+          <div><dt>FW</dt><dd id="st-fw">—</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Navegação inferior -->
+    <nav class="bottom-nav">
+      <button class="nav-dot active" data-goto="home">1</button>
+      <button class="nav-dot" data-goto="chat">2</button>
+      <button class="nav-dot" data-goto="voice">3</button>
+      <button class="nav-dot" data-goto="apps">4</button>
+    </nav>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
